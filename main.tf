@@ -369,6 +369,10 @@ resource "aws_subnet" "public" {
     var.tags,
     var.public_subnet_tags,
   )
+
+  lifecycle {
+    ignore_changes = [tags]
+  }
 }
 
 ################################################################################
@@ -396,6 +400,10 @@ resource "aws_subnet" "private" {
     var.tags,
     var.private_subnet_tags,
   )
+
+  lifecycle {
+    ignore_changes = [tags]
+  }
 }
 
 ################################################################################
@@ -576,6 +584,10 @@ resource "aws_subnet" "intra" {
     var.tags,
     var.intra_subnet_tags,
   )
+
+  lifecycle {
+    ignore_changes = [tags]
+  }
 }
 
 ################################################################################
